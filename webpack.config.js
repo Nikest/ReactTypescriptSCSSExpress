@@ -30,7 +30,13 @@ module.exports = {
                 'style-loader',
                 'css-loader?minimize=true&modules&importLoaders=1&localIdentName=[name]-[hash:base64:4]__[local]',
                 {
-                    loader: 'sass-loader'
+                    loader: 'sass-loader',
+                    options: {
+                        data: '@import "parameters";',
+                        includePaths: [
+                            path.resolve(__dirname, './src/Themes/default'),
+                        ],
+                    }
                 }],
         },
       ]
